@@ -20,7 +20,9 @@
                               <h1 class="author_name">
                                     <%= user.name %>
                               </h1>
-                              <p class="heart">heart</p>
+                              <p class="heart">
+                                    <%= user.profession %>
+                              </p>
                               <div class="Icon">
                                     <div class="facebook"><img src="/author/icon/Icons-facebook.svg" alt="Facebook">
                                     </div>
@@ -37,22 +39,187 @@
                               </div>
                         </div>
                         <div class="margin"></div>
-                        <div class=container2></div>
+                        <div class=container2>
+                              <div class="container2-1">
+                                    <h1>Age:</h1>
+                                    <p>
+                                          <%= user.age %>
+                                    </p>
+                              </div>
+                              <div class="container2-1">
+                                    <h1>Residence:</h1>
+                                    <p>
+                                          <%= user.residence %>
+                                    </p>
+                              </div>
+                              <div class="container2-1">
+                                    <h1>Freelance:</h1>
+                                    <p style="color: var(--Available, #7EB942);">Available</p>
+                              </div>
+                              <div class="container2-1">
+                                    <h1>Address:</h1>
+                                    <p>
+                                          <%= user.address %>
+                                    </p>
+                              </div>
+                        </div>
                         <div class="margin"></div>
-                        <div class=container3></div>
+                        <div class="container3">
+                              <h1>Languages:</h1>
+                              <% const lang_per=[217, 208, 190 ];const percentages=["100%", "80%" , "70%" ];
+                                    user.languages.forEach(function(lang, index) { %>
+                                    <div class="container3-1">
+                                          <h1>
+                                                <%= lang %>:
+                                          </h1>
+                                          <p>
+                                                <%= percentages[index] %>
+                                          </p>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="221" height="5" viewBox="0 0 221 5"
+                                          fill="none">
+                                          <rect x="0.25" y="0.25" width="220.5" height="4.5" rx="2.25" stroke="#FFB400"
+                                                stroke-width="0.5" />
+                                          <rect x="1.5" y="1.5" width="<%= lang_per[index] %>" height="2" rx="1"
+                                                fill="#FFB400" />
+                                    </svg>
+                                    <% }); %>
+                        </div>
                         <div class="margin"></div>
-                        <div class=container4></div>
+                        <div class="container4">
+                              <h1>Skills:</h1>
+                              <% const skil_per=[209, 207, 201,187,207 ];const skill_per=["90%", "85%" , "80%"
+                                    ,"70%","85%" ]; user.skills.forEach(function(skill, index) { %>
+                                    <div class="container4-1">
+                                          <h1>
+                                                <%= skill %>:
+                                          </h1>
+                                          <p>
+                                                <%= skill_per[index] %>
+                                          </p>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="221" height="5" viewBox="0 0 221 5"
+                                          fill="none">
+                                          <rect x="0.25" y="0.25" width="220.5" height="4.5" rx="2.25" stroke="#FFB400"
+                                                stroke-width="0.5" />
+                                          <rect x="1.5" y="1.5" width="<%= skil_per[index] %>" height="2" rx="1"
+                                                fill="#FFB400" />
+                                    </svg>
+                                    <% }); %>
+                        </div>
                         <div class="margin"></div>
-                        <div class=container5></div>
+                        <div class="container5">
+                              <h1>Extra Skills</h1>
+                              <% for (let i=0; i < user.extra_skills.length && i < 12; i +=3) { %>
+                                    <div class="container5-1">
+                                          <img src="/author/icon/Icons.svg" alt="icon" class="skill-icon" />
+                                          <p>
+                                                <%= user.extra_skills.slice(i, i + 3).join(', ') %></p>
+                                                  </div>
+                                                 <% } %>
+                                                </div>
                         <div class="margin"></div>
-                        <div class=container6></div>
-                        <div class="margin"></div>
-                        <div class=container7></div>
-                        <div class="margin"></div>
+                        
 
                   </div>
-                  <div class="midd_frame"></div>
-                  <div class="right_frame"></div>
+                  <div class="midd_frame">
+                        <div class="container">
+               <div class="background-decorations">
+            
+            <svg class="shape orange-circle-tl" viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="7" stroke="#FFB400" stroke-width="2" fill="none"/>
+            </svg>
+
+            <svg class="shape green-circle-mr" viewBox="0 0 17 16" fill="none">
+                 <path d="M8.00781 1C11.9055 1 15.0166 4.06381 15.0166 7.7832C15.0164 11.5025 11.9054 14.5654 8.00781 14.5654C4.11047 14.5652 1.00016 11.5023 1 7.7832C1 4.06395 4.11037 1.00023 8.00781 1Z" stroke="#05FF00" stroke-opacity="0.8" stroke-width="2"/>
+            </svg>
+
+            <svg class="shape blue-diamond-bl" viewBox="0 0 16 16">
+                <rect x="2" y="2" width="12" height="12" stroke="#4A65FF" stroke-width="2" fill="none" transform="rotate(45 8 8)"/>
+            </svg>
+
+            <svg class="shape green-circle-bl" viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="7" stroke="#05FF00" stroke-width="2" fill="none"/>
+            </svg>
+
+            <svg class="shape yellow-circle-br" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                <path d="M8.00781 1C11.9055 1 15.0166 4.06381 15.0166 7.7832C15.0164 11.5025 11.9054 14.5654 8.00781 14.5654C4.11047 14.5652 1.00016 11.5023 1 7.7832C1 4.06395 4.11037 1.00023 8.00781 1Z" stroke="#FFB400" stroke-opacity="0.8" stroke-width="2"/>
+            </svg>
+
+            <svg class="shape red-triangle-br" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                <path d="M12.1136 10.6748H1.7572L6.93494 1.95801L12.1136 10.6748Z" stroke="#FF2E00" stroke-opacity="0.8" stroke-width="2"/>
+            </svg>
+
+              <svg class="shape blue-circle-br" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                <path d="M8.00781 1C11.9055 1 15.0166 4.06381 15.0166 7.7832C15.0164 11.5025 11.9054 14.5654 8.00781 14.5654C4.11047 14.5652 1.00016 11.5023 1 7.7832C1 4.06395 4.11037 1.00023 8.00781 1Z" stroke="blue" stroke-opacity="0.8" stroke-width="2"/>
+            </svg>
+
+        </div>
+           
+                              <div class="left_mid">
+                                    <h1><%= user.work_place %></h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque rutrum semper sed suspendisse nunc lectus.</p>
+                                    <button class="btn">
+                                          <h3>Hire me</h3>
+                                          <img src="/author/icon/frame.svg" alt="icon" class="icon" />
+                                    </button>
+                              </div>
+                              <div class="right_mid">
+                                    <img src="/author/images/your image 1.png" alt="author" class="author" />
+                              </div>
+                        </div>
+
+                        <div class="my_services">
+                              <div class="service_container">
+                                    <h1>My Services</h1>
+                                    <p><%= user.service_desc %></p>
+                              </div>
+                              <div class="list_service">
+                                    <% user.services.forEach((service)=>{%>
+                                    <div class="service">
+                                         <% if (service.icon) { %>
+                                             <img src="<%= service.icon %>" alt="<%= service.title %>"                                          class="service-icon" />
+                                           <% } %>
+                                          <h3><%= service.title %></h3>
+                                          <p><%= service.description %></p>
+                                          <% if (service.link) { %>
+                                              <a href="<%= service.link %>" target="_blank" rel="noopener noreferrer">Learn More</a>
+                                          <% } %>
+                                         
+                                    </div>
+                                    <% }); %>
+                              </div>
+                        </div>
+                  </div>
+                  <div class="right_frame">
+                               
+                                      <div class="contrast">
+                                    <img  src="/author/icon/Contrast.svg" alt="author" class="author" />
+                                 </div>
+                                   <div class="mid_menu">
+                                    <div class="nav-item">
+                                         <img src="/author/icon/Home.svg" alt="Home"/ >
+                                     </div>
+                                    <div class="nav-item">
+                                         <img src="/author/icon/file-code.svg" alt="Home"/ >
+                                     </div>
+                                    <div class="nav-item">
+                                         <img src="/author/icon/cv.svg" alt="Home"/ >
+                                     </div>
+                                    <div class="nav-item">
+                                         <img src="/author/icon/Vector.svg" alt="Home"/ >
+                                     </div>
+                                    <div class="nav-item">
+                                         <img src="/author/icon/Contact.svg" alt="Home"/ >
+                                     </div>
+                                       <div class="nav-item">
+                                         <img src="/author/icon/Blog.svg" alt="Home"/ >
+                                     </div>
+                               
+                                 </div>
+                               
+                  </div>
+            
             </div>
       </div>
 

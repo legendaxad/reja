@@ -3,10 +3,10 @@
   "profession": "Software Engineer",
   "age": 20,
   "residence": "S.Korea",
-  "address": "S.Korea, Busan",
+  "address": "S.Korea, Gwangju",
   "languages": ["Uzbek", "Korean", "English"],
   "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
-  "extra_skills": ["Bootstrap", "Materialize", "Styling", "Sass", "Django", "Flask", "GIT Knowledge"],
+  "extra_skills": [ "Styling", "Materialize", "Sass", "Django","Bootstrap", "Flask", "GIT Knowledge"],
   "work_place": "IT Company",
   "service_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
   "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Cras sed felis eget.",
@@ -16,5 +16,38 @@
   "flower_name": ["Tulip", "Daffodil", "Poppy", "Sunflower", "Bluebell", "Rose", "Snowdrop", "Cherry", "blossom"],
   "flower_price": ["15$", "25$", "12$", "20$", "35$", "30$", "22$", "19$", "9$"],
   "famous_words": ["World is Beautiful with Flowers"],
-  "famous_name": ["Steve Jobs"]
+  "famous_name": ["Steve Jobs"],
+  "services": [
+    {
+      "icon": "/author/icon/coding.svg",
+      "title": "Web Development",
+      "description": "Blog, E-Commerce"
+    },
+    {
+      "icon": "/author/icon/illustration.svg",
+      "title": "UI/UX Design",
+      "description": "Mobile App, Website Design"
+    },
+    {
+      "icon": "/author/icon/Microphone.svg",
+      "title": "Sound Design",
+      "description": "Voice Over, Beat Making"
+    },
+    {
+      "icon": "/author/icon/game-development.svg",
+      "title": "Game Design",
+      "description": "Character Design, Props & Objects"
+    },
+    {
+      "icon": "/author/icon/Photographer.svg",
+      "title": "Photography",
+      "description": "Portrait, Product Photography"
+    },
+    {
+      "icon": null,
+      "title": "Advertising",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi.",
+      "link": "ORDER NOW >"
+    }
+  ]
 }
