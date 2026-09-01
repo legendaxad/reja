@@ -26,14 +26,31 @@ app.set("view engine", "ejs");
 
 // 4 ROUTE CODE
 app.post("/create-item", function (req, res) {
-  console.log(req.body);
-  res.json({ test: "success" });
+  console.log("user entered /create-item");
+  const newreja = req.body.reja;
+  db.collection("plans").insertOne({ reja: newreja }, (err, data) => {
+    if (err) {
+      console.log("ERROR:", err);
+      res.end("something went wrong");
+    } else {
+      res.end("successfully added");
+    }
+  });
 });
 app.get("/author", (req, res) => {
   res.render("author", { user: user });
 });
 app.get("/", function (req, res) {
-  res.render("reja");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        res.status(500).send("Database error");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;
