@@ -1,3 +1,18 @@
+//B-TASK
+
+const countDigit = (word) => {
+  let count = 0;
+  const splited = word.split("");
+  const digits = "0123456789";
+  splited.map((i) => {
+    if (digits.includes(i)) {
+      count += 1;
+    }
+  });
+  return count;
+};
+console.log(countDigit("banana12sss233"));
+
 // A-TASK:
 
 // const countLetter = (alpha, word) => {
