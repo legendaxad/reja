@@ -1,42 +1,28 @@
-console.log("Web Serverni Boshlash");
 const http = require("http");
-const express = require("express");
-const app = express();
-const fs = require("fs");
+const mongodb = require("mongodb");
+let db;
+const connectionString =
+  "mongodb+srv://kylemitcoder_db_user:bUh8OoU78FVOjUIV@cluster0.1pq5ryg.mongodb.net/?appName=Cluster0";
 
-let user;
-fs.readFile("database/user.json", "utf-8", (err, data) => {
-  if (err) {
-    console.log("ERROR:", err);
-  } else {
-    user = JSON.parse(data);
-  }
-});
-// 1 Kirish Kodlari
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-// 2 Sessionga Code
-// 3 VIEWS code
-app.set("views", "views");
-app.set("view engine", "ejs");
+mongodb.connect(
+  connectionString,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (err, client) => {
+    if (err) {
+      console.log("MongoDBga ulanishda xatolik yuz berdi:", err);
+    } else {
+      db = client.db();
+      console.log("MongoDBga muvaffaqiyatli ulandi");
+      module.exports = client;
+      const app = require("./app");
 
-// 4 ROUTE CODE
-app.post("/create-item", function (req, res) {
-  console.log(req.body);
-  res.json({ test: "success" });
-});
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
-});
-app.get("/", function (req, res) {
-  res.render("reja");
-});
-
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-  console.log(
-    `This server is running successfully on port: ${PORT} , http://localhost:${PORT}`,
-  );
-});
+      const server = http.createServer(app);
+      let PORT = 3000;
+      server.listen(PORT, function () {
+        console.log(
+          `This server is running successfully on port: ${PORT} , http://localhost:${PORT}`,
+        );
+      });
+    }
+  },
+);
