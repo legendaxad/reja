@@ -14,7 +14,7 @@
       <div class="jumbotron p-4 shadow-sm bg-white rounded mb-3">
         <form id="create-form" action="/create-item" method="POST">
           <div class="d-flex align-items-center gap-2">
-            <input id="create-item" autofocus autocomplete="off" type="text" class="form-control" name="reja" required style="flex:1"/>
+            <input id="create-field" autofocus autocomplete="off" type="text" class="form-control" name="reja" required style="flex:1"/>
             <button class="btn btn-primary text-nowrap" style="border-radius: 20px;">Yangi Reja qo'shish</button>
           </div>
         </form>
@@ -23,7 +23,7 @@
       <% if (items.length === 0) { %>
         <p class="text-center text-muted">Hozircha hech qanday reja mavjud emas.</p>
       <% } else { %>
-        <ul class="list-group mb-3"> 
+        <ul id="item-list" class="list-group mb-3"> 
           <% items.map(function(item) { %>
             <li class="list-group-item d-flex justify-content-between align-items-center">
               <span><%= item.reja %></span>
@@ -37,7 +37,8 @@
         <button id="clean-all" class="btn btn-danger" style="border-radius: 20px;">Barcha Rejalarni tozalash</button>
       </div>
     </div>
-
+    <script src="https://unpkg.com/axios@1.13.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/browser.js"></script>
   </body>
 </html>
