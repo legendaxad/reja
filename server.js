@@ -1,10 +1,8 @@
-require("dotenv").config(); // Load environment variables at the top
 const http = require("http");
 const mongodb = require("mongodb");
 
 let db;
-// const connectionString = process.env.const
-connectionString =
+const connectionString =
   "mongodb+srv://kylemitcoder_db_user:bUh8OoU78FVOjUIV@cluster0.1pq5ryg.mongodb.net/Reja?appName=Cluster0";
 
 mongodb.connect(
@@ -15,7 +13,7 @@ mongodb.connect(
       console.log("MongoDBga ulanishda xatolik yuz berdi:", err);
     } else {
       db = client.db();
-      console.log("MongoDBga muvaffaqiyatli ulandi");
+      console.log("MongoDBga muvaffaqiyatli ulandi", client);
       module.exports = client;
 
       const app = require("./app");
