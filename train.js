@@ -1,17 +1,38 @@
+//C -task
+
+const checkContent = (first, second) => {
+  const split_first = first.split("")
+  const split_second = second.split("")
+  let count = 0
+  if (split_first.length === split_second.length) {
+    split_first.map((i) => {
+      if (split_second.includes(i)) {
+        count++
+      }
+    })
+    return count === split_first.length
+  }
+  else return false
+}
+console.log(checkContent("axa", "daxa"));
+
+
+
+
 //B-TASK
 
-const countDigit = (word) => {
-  let count = 0;
-  const splited = word.split("");
-  const digits = "0123456789";
-  splited.map((i) => {
-    if (digits.includes(i)) {
-      count += 1;
-    }
-  });
-  return count;
-};
-console.log(countDigit("banana12sss233"));
+// const countDigit = (word) => {
+//   let count = 0;
+//   const splited = word.split("");
+//   const digits = "0123456789";
+//   splited.map((i) => {
+//     if (digits.includes(i)) {
+//       count += 1;
+//     }
+//   });
+//   return count;
+// };
+// console.log(countDigit("banana12sss233"));
 
 // A-TASK:
 
