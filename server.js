@@ -13,7 +13,7 @@ mongodb.connect(
       console.log("MongoDBga ulanishda xatolik yuz berdi:", err);
     } else {
       db = client.db();
-      console.log("MongoDBga muvaffaqiyatli ulandi", client);
+      console.log("MongoDBga muvaffaqiyatli ulandi");
       module.exports = client;
 
       const app = require("./app");

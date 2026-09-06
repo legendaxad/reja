@@ -29,7 +29,6 @@ app.set("view engine", "ejs");
 app.post("/create-item", function (req, res) {
   const new_reja = req.body.reja;
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-    console.log(data.ops[0]);
     res.json(data.ops[0]);
   });
 });
@@ -39,12 +38,19 @@ app.post("/delete-item", (req, res) => {
     res.json({ state: "success" })
   })
 });
-// app.post("/update-item", (req, res) => {
-//   const id = req.body.id
-//   db.collection("plans").updateOne({ _id: new mongodb.ObjectId(id) }, { $set: { reja: req.body.reja } }, (err, data) => {
-//     res.json({ state: "success" })
-//   })
-// })
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function () {
+      res.json({ state: "Hamma rejalar ochirildi" })
+    })
+  }
+})
+app.post("/edit-item", (req, res) => {
+  const data = req.body
+  db.collection("plans").findOneAndUpdate({ _id: new mongodb.ObjectId(data.id) }, { $set: { reja: data.new_input } }, (err, data) => {
+    res.json({ state: "success" })
+  })
+})
 app.get("/author", (req, res) => {
   res.render("author", { user: user });
 });

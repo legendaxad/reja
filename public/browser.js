@@ -1,3 +1,4 @@
+
 function itemTemplate(item) {
       return `     <li class="list-group-item d-flex justify-content-between align-items-center">
               <span>${item.reja}</span>
@@ -41,6 +42,25 @@ document.addEventListener("click", function (e) {
             }
       }
       if (e.target.classList.contains("edit-me")) {
+            let userInput = prompt("ozgartirish kiriting", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML)
+            if (userInput) {
+                  axios.post("/edit-item", { id: e.target.getAttribute("data-id"), new_input: userInput }).then(response => {
+                        e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput
 
+                  }).catch(err => {
+                        console.error("Iltimos qaytadan urunib koring.", err);
+
+                  })
+            }
       }
+
+
+
+})
+
+document.getElementById("clean-all").addEventListener("click", () => {
+      axios.post("/delete-all", { delete_all: true }).then(response => {
+            alert(response.data.state);
+            document.location.reload()
+      }).catch(err => { })
 })
