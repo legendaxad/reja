@@ -1,20 +1,70 @@
-//C -task
+//D-Task
 
-const checkContent = (first, second) => {
-  const split_first = first.split("")
-  const split_second = second.split("")
-  let count = 0
-  if (split_first.length === split_second.length) {
-    split_first.map((i) => {
-      if (split_second.includes(i)) {
-        count++
-      }
-    })
-    return count === split_first.length
+
+const moment = require("moment");
+
+class Shop {
+  constructor(shashlik, beshbarmaq, moxito) {
+    this.shashlik = shashlik;
+    this.beshbarmaq = beshbarmaq;
+    this.moxito = moxito;
   }
-  else return false
+  qoldiq() {
+    const time = moment()
+    const soat = time.format("HH");
+    const minute = time.format("mm");
+
+    console.log(
+      `Hozir ${soat}:${minute} da ${this.shashlik} ta shashlik, ${this.beshbarmaq} ta beshbarmaq va ${this.moxito} ta moxito bor!`
+    );
+  };
+  sotish(product, count) {
+    if (product in this) {
+
+      if (this[product] >= count) {
+        this[product] -= count;
+        console.log(`Sotildi: ${count} ta ${product}`);
+      } else {
+        console.log(`Kechirasiz yetarlicha mavjud emas bizada hozir ${this[product]} ta bor.`);
+      }
+    } else {
+      console.log(`Bunday mahsulot mavjud emas: ${product}`);
+    }
+  }
+  qabul(product, count) {
+    if (product in this) {
+      this[product] += count;
+      console.log(`Qabul qilindi: ${count} ta ${product}`);
+    } else {
+      console.log(`Bunday mahsulot mavjud emas: ${product}`);
+    }
+
+  }
+
+
 }
-console.log(checkContent("axa", "daxa"));
+const shop = new Shop(10, 3, 2)
+shop.qoldiq()
+shop.sotish("shashlik", 22)
+shop.qabul("beshbarmaq", 4)
+shop.qoldiq()
+// //C -task
+
+// const checkContent = (first, second) => {
+//   const split_first = first.split("")
+//   const split_second = second.split("")
+//   let count = 0
+//   if (split_first.length === split_second.length) {
+//     split_first.map((i) => {
+//       if (split_second.includes(i)) {
+//         count++
+//       }
+//     })
+//     return count === split_first.length
+//   }
+//   else return false
+// }
+// console.log(checkContent("axa", "daxa"));
 
 
 
