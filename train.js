@@ -1,17 +1,40 @@
+// E-TASK
+
+
+
+// const getReverse = (str) => {
+//       let i = 0;
+//       splitted_word = str.split("")
+//       console.log(splitted_word);
+
+//       let reversed_word = []
+//       for (i; i < splitted_word.length; i++) {
+//             reversed_word.unshift(splitted_word[i])
+//       }
+//       return reversed_word.join("")
+// }
+
+// console.log(getReverse("axad"))
+
+// const getReverse = (str) => {
+//       return str.split("").reverse().join("")
+// }
+// console.log(getReverse("axad"));
+
 // F TASK
 
-const findDoublers = (word) => {
-  const sorted = word.split("").sort();
-  let i = 0
-  for (i; i < sorted.length - 1; i++) {
-    if (sorted[i] === sorted[i + 1]) {
-      return true;
-    }
-  }
+// const findDoublers = (word) => {
+//   const sorted = word.split("").sort();
+//   let i = 0
+//   for (i; i < sorted.length - 1; i++) {
+//     if (sorted[i] === sorted[i + 1]) {
+//       return true;
+//     }
+//   }
 
-  return false;
-};
-console.log(findDoublers("axdd"))
+//   return false;
+// };
+// console.log(findDoublers("axdd"))
 
 
 
