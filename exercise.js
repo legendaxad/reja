@@ -1,3 +1,64 @@
+
+
+// const hasUniqueChars = (word) => {
+//       const word1 = word.split("").sort()
+
+//       for (let i = 0; i < word1.length; i++) {
+//             if (word1[i] === word1[i + 1]) {
+//                   return false
+
+//             }
+//       }
+//       return true
+
+// }
+// console.log(hasUniqueChars("world"));
+
+
+
+
+
+// const getCompressedString = (word) => {
+//       const word1 = word.split("").sort().join("")
+//       let result = ""
+//       let count = 1
+//       for (let i = 0; i < word1.length; i++) {
+//             if (word1[i] === word1[i + 1]) {
+//                   count++
+//             }
+//             else {
+//                   result += word1[i] + count;
+//                   count = 1
+//             }
+
+
+//       }
+//       return result
+// }
+// console.log(getCompressedString("aaabbbcccaaa"));
+
+
+
+
+
+// const checkAnagram = (str1, str2) => {
+//       const split1 = str1.split("").sort()
+//       const split2 = str2.split("").sort()
+//       console.log(split1);
+//       console.log(split2);
+
+//       for (let i = 0; i < split1.length; i++) {
+//             if (split1.length === split2.length) {
+//                   split1[i] === split2[i]
+//                   return true
+//             }
+//       }
+//       return false
+// }
+
+// console.log(checkAnagram("word", "wrd"));
+
+
 // const findLetter = (letter, word) => {
 //   count = 0;
 //   for (i of word) {
