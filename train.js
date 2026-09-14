@@ -1,3 +1,32 @@
+// # G-TASK
+// 1-method
+// const getHighestIndex = (array) => {
+//       let i = 0
+//       let higher = 0
+//       array.map((value, index) => {
+//             if (value > array[higher]) {
+//                   higher = index
+//             }
+//       })
+//       return higher
+// }
+// console.log(getHighestIndex([5, 21, 12, 214, 8]));
+
+
+// 2-method
+// const getHighestIndex = (array) => {
+//       let i = 0
+//       let higher = 0
+//       for (i; i < array.length; i++) {
+//             if (array[i] > array[higher]) {
+//                   higher = i
+//             }
+//       }
+//       return higher
+// }
+// console.log(getHighestIndex([5, 21, 12, 214, 8]));
+
+
 // E-TASK
 
 
