@@ -1,3 +1,24 @@
+// H-TASK
+
+
+
+// const getPositive = (array) => {
+//       let result = ""
+//       let i = 0
+//       for (i; i < array.length; i++) {
+//             if (array[i] >= 0) {
+//                   result += array[i]
+//             }
+//       }
+//       return result
+// }
+// console.log(getPositive([1, -4, 5, 2]));
+
+
+
+
+
+
 // # G-TASK
 // 1-method
 // const getHighestIndex = (array) => {
