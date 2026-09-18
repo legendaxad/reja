@@ -6,7 +6,7 @@
 //       let result = ""
 //       let i = 0
 //       for (i; i < array.length; i++) {
-//             if (array[i] >= 0) {
+//             if (array[i] > 0) {
 //                   result += array[i]
 //             }
 //       }
