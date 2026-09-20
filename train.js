@@ -1,3 +1,29 @@
+// I-TASK
+
+
+// const majorityElement = (array) => {
+//       let i = 0
+//       let count = 0
+//       let result = 0
+//       for (i; i < array.length; i++) {
+//             let p = 0
+//             let secondCount = 0
+//             for (p; p < array.length; p++) {
+//                   if (array[i] === array[p]) {
+//                         secondCount++
+//                   }
+//             }
+//             if (secondCount > count) {
+//                   count = secondCount
+//                   result = array[i]
+//                   console.log(`count: ${count}, result: ${result}`)
+//             }
+
+//       }
+//       return result
+// }
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+
 // H-TASK
 
 
